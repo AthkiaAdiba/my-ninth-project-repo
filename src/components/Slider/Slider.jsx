@@ -19,7 +19,11 @@ const Slider = () => {
             >
                 <SwiperSlide>
                     <div className="slide slide1">
-                        <h1>slide1</h1>
+                        <div className='flex mt-44 mr-[600px]'>
+                            <div>
+                                <h2 className='font-roboto text-lg lg:text-5xl font-bold text-white'>Awesome Family Home</h2>
+                            </div>
+                        </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
