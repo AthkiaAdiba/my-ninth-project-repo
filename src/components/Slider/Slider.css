@@ -1,0 +1,28 @@
+.slide{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.swiper-button-prev{
+    background-color: red;
+}
+
+.slide1 {
+    background-image: url("../../assets/banner2.jpeg");
+}
+
+.slide2 {
+    background-image: url("../../assets/banner1.jpg");
+}
+
+.slide3 {
+    background-image: url("../../assets/banner5.jpg");
+}
+
+.slide4 {
+    background-image: url("../../assets/banner3.webp");
+}
