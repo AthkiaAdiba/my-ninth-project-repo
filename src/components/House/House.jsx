@@ -16,7 +16,7 @@ const House = ({ house }) => {
                             facilities.map((facility, idx) => <p key={idx}>{facility}</p>)
                         }
                     </div>
-                    <Link to={`/houseDetails/${id_}`}><button className="btn bg-gray-600 text-white">View Property</button></Link>
+                    <Link to={`/houseDetails/${id_}`}><button className="btn bg-gray-700 text-white">View Property</button></Link>
                 </div>
                <div className="absolute flex justify-between top-4 left-5 right-5">
                     <div className="bg-gray-400 px-2 py-1 text-white">

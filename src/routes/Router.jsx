@@ -3,6 +3,7 @@ import Root from "../layout/Root";
 import Home from "../pages/Home/Home";
 import Profile from "../pages/Profile/Profile";
 import HouseDetails from "../components/HouseDetails/HouseDetails";
+import Login from "../pages/Login/Login";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
                 path: '/houseDetails/:id',
                 element: <HouseDetails></HouseDetails>,
                 loader: () => fetch('/houses.json')
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
             }
         ]
     }
