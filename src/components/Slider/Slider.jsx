@@ -6,7 +6,7 @@ import { Navigation, Autoplay, EffectFade } from 'swiper/modules';
 
 const Slider = () => {
     return (
-        <div className='mb-10 mt-20'>
+        <div className='mb-10 mt-16 lg:mt-20'>
             <Swiper
                 navigation={true}
                 modules={[Navigation, Autoplay, EffectFade]}

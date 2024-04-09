@@ -1,26 +1,41 @@
 import { FaLocationDot } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const House = ({ house }) => {
-    const { image, estate_title, location, facilities } = house;
+    const { id_, image, estate_title, location, facilities, status, segment_name, price } = house;
     return (
-        <div>
-            <div className="h-[520px] card bg-base-100 font-roboto shadow-xl">
-                <figure><img className="w-full h-[300px]" src={image} alt="Shoes" /></figure>
+        <div className="flex">
+            <div className="relative card bg-base-100 font-roboto shadow-sm border-2">
+                <figure><img className="w-full h-[300px] lg:h-[350px]" src={image} alt="Shoes" /></figure>
                 <div className="space-y-3 card-body">
                     <h2 className="card-title text-gray-800">{estate_title}</h2>
                     <p className="flex gap-3 items-center text-lg text-gray-500"><FaLocationDot></FaLocationDot>{location}</p>
                     <div className="grid grid-cols-2 gap-x-24 gap-y-3 text-gray-500 text-base">
                         {
-                            facilities.map(facility => <p>{facility}</p>)
+                            facilities.map((facility, idx) => <p key={idx}>{facility}</p>)
                         }
                     </div>
-                    <div className="card-actions">
-                        <button className="btn bg-gray-600 text-white">View Property</button>
+                    <Link to={`/houseDetails/${id_}`}><button className="btn bg-gray-600 text-white">View Property</button></Link>
+                </div>
+               <div className="absolute flex justify-between top-4 left-5 right-5">
+                    <div className="bg-gray-400 px-2 py-1 text-white">
+                        {segment_name}
+                    </div>
+                    <div>
+                        <div className="bg-gray-600 px-2 py-1 text-white">
+                            {status}
+                        </div>
                     </div>
                 </div>
+                <p className="absolute top-60 lg:top-72 left-5 text-white text-2xl">{price}</p>
             </div>
         </div>
     );
 };
+
+House.propTypes = {
+    house: PropTypes.object
+}
 
 export default House;
