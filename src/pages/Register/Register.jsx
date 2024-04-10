@@ -9,8 +9,9 @@ import { FaEyeSlash } from "react-icons/fa6";
 
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateInformation } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+    
 
     const {
         register,
@@ -24,8 +25,17 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                const userInformation = result.user;
                 toast.success('Account created successfully');
                 reset();
+
+                // update profile
+                updateInformation(userInformation, name, image)
+                .then(() => {
+                    console.log('profile updated')
+                })
+                .catch()
+
             })
             .catch(error => {
                 console.error(error)

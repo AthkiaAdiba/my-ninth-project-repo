@@ -7,8 +7,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const { login, user } = useContext(AuthContext);
-    console.log(user.reloadUserInfo.passwordHash);
+    const { login, user, setLoggedUser } = useContext(AuthContext);
+    
 
     const {
         register,
@@ -24,6 +24,7 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 console.log(result.user);
+                setLoggedUser(result.user)
                 toast.success('You have logged in successfully');
                 reset();
             })
