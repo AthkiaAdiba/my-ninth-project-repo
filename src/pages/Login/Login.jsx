@@ -7,8 +7,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const { login, user, setLoggedUser } = useContext(AuthContext);
-    
+    const { login, user, setLoggedUser, loginWithGoogle, loginWithGithub } = useContext(AuthContext);
+
 
     const {
         register,
@@ -17,6 +17,7 @@ const Login = () => {
         formState: { errors },
     } = useForm()
 
+    // login with password and email
     const onSubmit = (data) => {
         const { email, password } = data;
 
@@ -24,13 +25,41 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 console.log(result.user);
-                setLoggedUser(result.user)
+                setLoggedUser(user)
                 toast.success('You have logged in successfully');
                 reset();
             })
             .catch(error => {
                 console.error(error);
 
+            })
+    }
+
+    // login with google
+    const handleLoginWithGoogle = () => {
+        loginWithGoogle()
+            .then(result => {
+                console.log(result.user)
+                setLoggedUser(user)
+                toast.success('You have logged in successfully');
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+    // login with Github
+    const handleLoginWithGithub = () => {
+        loginWithGithub()
+            .then(result => {
+                console.log(result.user)
+                setLoggedUser(user)
+                toast.success('You have logged in successfully');
+
+            })
+            .catch(error => {
+                console.error(error)
             })
     }
 
@@ -41,14 +70,7 @@ const Login = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                     <div className="space-y-1 text-lg">
                         <label className="block text-gray-900 font-medium text-xl">Email Address</label>
-                        <input type="email" name="email" placeholder="Enter Your Email" className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-100 text-black focus:border-violet-400" {...register("email", {
-                            validate: (value) => {
-                                if (value == user.email) {
-                                    return true;
-                                }
-                                return toast.error('Email does not match.');
-                            }
-                        })} />
+                        <input type="email" name="email" placeholder="Enter Your Email" className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-100 text-black focus:border-violet-400" {...register("email")} />
                     </div>
 
                     <div className="space-y-1 text-lg">
@@ -66,13 +88,13 @@ const Login = () => {
                 </div>
                 <div className="space-y-5">
                     <div>
-                        <button className="text-black text-lg flex items-center justify-center w-full p-4 space-x-4 rounded-md focus:ring-2 focus:ring-offset-1 border-gray-600 border-2">
+                        <button onClick={handleLoginWithGoogle} className="text-black text-lg flex items-center justify-center w-full p-4 space-x-4 rounded-md focus:ring-2 focus:ring-offset-1 border-gray-600 border-2">
                             <FaGoogle></FaGoogle>
                             <p>Login with Google</p>
                         </button>
                     </div>
                     <div>
-                        <button className="text-black text-lg flex items-center justify-center w-full p-4 space-x-4 border-2 rounded-md focus:ring-2 focus:ring-offset-1 border-gray-600 focus:dark:ring-violet-600">
+                        <button onClick={handleLoginWithGithub} className="text-black text-lg flex items-center justify-center w-full p-4 space-x-4 border-2 rounded-md focus:ring-2 focus:ring-offset-1 border-gray-600 focus:dark:ring-violet-600">
                             <FaGithub></FaGithub>
                             <p>Login with GitHub</p>
                         </button>

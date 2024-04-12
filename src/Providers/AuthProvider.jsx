@@ -1,14 +1,18 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from "../firebase/firebase.config";
+import { GithubAuthProvider } from "firebase/auth/cordova";
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loggedUser, setLoggedUser] = useState(null);
-    console.log(loggedUser)
+    
+    // providers
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     // create User
     const createUser = (email, password) => {
@@ -18,6 +22,16 @@ const AuthProvider = ({ children }) => {
     // Login user
     const login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    // login with google
+    const loginWithGoogle = () => {
+        return signInWithPopup(auth, googleProvider);
+    }
+
+    // login with Github
+    const loginWithGithub = () => {
+        return signInWithPopup(auth, githubProvider);
     }
 
     // Update profile
@@ -51,7 +65,9 @@ const AuthProvider = ({ children }) => {
         loggedUser,
         setLoggedUser,
         updateInformation,
-        logOut 
+        logOut,
+        loginWithGoogle,
+        loginWithGithub 
     }
 
     return (
