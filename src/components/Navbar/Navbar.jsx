@@ -4,13 +4,17 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Navbar = () => {
-    const { loggedUser, logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
     const navLinks = <>
         <NavLink className={({ isActive }) => isActive ? 'underline mr-4' : 'mr-4'} to='/'>Home</NavLink>
         <NavLink className={({ isActive }) => isActive ? 'underline mr-4' : 'mr-4'} to='/profile'>Profile</NavLink>
         <NavLink className={({ isActive }) => isActive ? 'underline mr-4' : 'mr-4'} to='/anything'>Anything</NavLink>
-        <NavLink className={({ isActive }) => isActive ? 'underline mr-4' : 'mr-4'} to='/updatedProfile'>Updated Profile</NavLink>
+        {
+            user && <>
+                <NavLink className={({ isActive }) => isActive ? 'underline mr-4' : 'mr-4'} to='/updatedProfile'>Updated Profile</NavLink>
+            </>
+        }
 
     </>
 
@@ -42,11 +46,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {
-                    loggedUser ?
+                    user ?
                         <div className="navbar-end flex gap-2 lg:gap-4">
-                            <div className="avatar tooltip tooltip-left" data-tip={loggedUser.displayName}>
+                            <div className="avatar tooltip tooltip-left" data-tip={user.displayName}>
                                 <div className="w-10 lg:w-12 h-10 lg:h-12 rounded-full">
-                                    <img src={loggedUser.photoURL} />
+                                    <img src={user.photoURL} />
                                 </div>
                             </div>
                             <Link onClick={handleLogOut} className="btn w-14 lg:w-28 bg-gray-900 text-white border-none font-roboto text-xl">Log out</Link>

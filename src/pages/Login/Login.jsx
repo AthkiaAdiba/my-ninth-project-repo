@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const { login, user, setLoggedUser, loginWithGoogle, loginWithGithub } = useContext(AuthContext);
+    const { login, loginWithGoogle, loginWithGithub } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
 
     const {
@@ -25,9 +27,12 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 console.log(result.user);
-                setLoggedUser(user)
+                // setLoggedUser(user)
                 toast.success('You have logged in successfully');
                 reset();
+
+                // navigate after login
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.error(error);
@@ -40,7 +45,7 @@ const Login = () => {
         loginWithGoogle()
             .then(result => {
                 console.log(result.user)
-                setLoggedUser(user)
+                // setLoggedUser(user)
                 toast.success('You have logged in successfully');
 
             })
@@ -54,7 +59,7 @@ const Login = () => {
         loginWithGithub()
             .then(result => {
                 console.log(result.user)
-                setLoggedUser(user)
+                // setLoggedUser(user)
                 toast.success('You have logged in successfully');
 
             })
