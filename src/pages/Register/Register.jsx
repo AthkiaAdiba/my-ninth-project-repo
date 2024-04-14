@@ -2,16 +2,17 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 
 
 const Register = () => {
-    const { createUser, updateInformation } = useContext(AuthContext);
+    const { createUser, updateInformation, logOut } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     
+
 
     const {
         register,
@@ -31,11 +32,18 @@ const Register = () => {
 
                 // update profile
                 updateInformation(userInformation, name, image)
-                .then(() => {
-                    console.log('profile updated')
-                })
-                .catch()
+                    .then(() => {
+                        console.log('profile updated')
+                    })
+                    .catch()
 
+                // log out
+                logOut()
+                    .then(() => {
+                        console.log('logged out successfully')
+                    })
+                    .catch()
+               
             })
             .catch(error => {
                 console.error(error)
@@ -51,13 +59,13 @@ const Register = () => {
                     <div className="space-y-1 text-lg">
                         <label className="block text-gray-900 font-medium text-xl">Full Name</label>
                         <input type="text" name="name" placeholder="Enter Your Full Name" className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-100 text-black focus:border-violet-400" {...register("name", { required: true })} />
-                        {errors.name && <span className="text-red-700">This field is required</span>}
+                        {errors.name && <span className="text-red-700">Name is required</span>}
                     </div>
 
                     <div className="space-y-1 text-lg">
                         <label className="block text-gray-900 font-medium text-xl">Email Address</label>
                         <input type="email" name="email" placeholder="Enter Your Email" className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-100 text-black focus:border-violet-400" {...register("email", { required: true })} />
-                        {errors.email && <span className="text-red-700">This field is required</span>}
+                        {errors.email && <span className="text-red-700">Email is required</span>}
                     </div>
 
                     <div className="space-y-1 text-lg">
@@ -70,7 +78,7 @@ const Register = () => {
                         <input type={showPassword ? "text" : "password"} name="password" placeholder="Enter Your Password" className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-100 text-black focus:border-violet-400" {...register("password", {
                             required: {
                                 value: true,
-                                message: 'This field is required'
+                                message: 'Password is required'
                             },
                             pattern: {
                                 value: /^(?=.*[a-z])(?=.*[A-Z]).+$/,
@@ -81,12 +89,12 @@ const Register = () => {
                                 message: 'Length must be at least 6 character'
                             }
                         })} />
-                        {errors.password && <span className="text-red-700">{errors.password.message}</span>}
-                        <span className="absolute bottom-4 right-5 text-gray-900 text-xl" onClick={() => setShowPassword(!showPassword)}>
+                        <span className={errors.password ? 'absolute bottom-10 right-5 text-gray-900 text-xl' : 'absolute bottom-4 right-5 text-gray-900 text-xl'} onClick={() => setShowPassword(!showPassword)}>
                             {
                                 showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
                             }
                         </span>
+                        {errors.password && <span className="text-red-700">{errors.password.message}</span>}
                     </div>
 
                     <button className="block w-full p-3 text-center rounded-sm bg-gray-900 text-white text-lg">Register</button>

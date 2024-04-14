@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { IoIosHome } from "react-icons/io";
 
 
 const Navbar = () => {
@@ -28,7 +29,7 @@ const Navbar = () => {
     }
     return (
         <div>
-            <div className="navbar fixed top-0 w-full right-0 left-0 z-20 bg-gray-900 text-white lg:px-9 lg:py-5">
+            <div className="navbar fixed top-0 w-full right-0 left-0 z-20 bg-gray-900 text-white px-1 lg:px-9 lg:py-7">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -38,7 +39,10 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl font-pt_sans lg:text-4xl">Home Dreams</a>
+                    <div className="flex items-center">
+                        <IoIosHome className="text-3xl lg:text-4xl"></IoIosHome>
+                        <p><a className="btn btn-ghost text-lg font-pt_sans lg:text-4xl">DreamLoom Realty</a></p>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="text-xl menu menu-horizontal px-1 bg-gray-900 text-white font-roboto">
@@ -47,13 +51,13 @@ const Navbar = () => {
                 </div>
                 {
                     user ?
-                        <div className="navbar-end flex gap-2 lg:gap-4">
+                        <div className="navbar-end flex gap-0 lg:gap-4">
                             <div className="avatar tooltip tooltip-left" data-tip={user.displayName}>
                                 <div className="w-10 lg:w-12 h-10 lg:h-12 rounded-full">
                                     <img src={user.photoURL} />
                                 </div>
                             </div>
-                            <Link onClick={handleLogOut} className="btn w-14 lg:w-28 bg-gray-900 text-white border-none font-roboto text-xl">Log out</Link>
+                            <Link onClick={handleLogOut} className="btn w-14 lg:w-28 bg-gray-900 text-white border-none font-roboto text-base lg:text-xl">Log out</Link>
                         </div> :
                         <div className="navbar-end flex gap-2 lg:gap-4">
                             <Link to='/login' className="btn w-14 lg:w-20 bg-gray-900 text-white border-none font-roboto text-xl">Login</Link>

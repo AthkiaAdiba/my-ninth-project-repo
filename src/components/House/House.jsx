@@ -1,11 +1,17 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import { Helmet } from "react-helmet-async";
+
+
 
 const House = ({ house }) => {
     const { id_, image, estate_title, location, facilities, status, segment_name, price } = house;
     return (
         <div className="flex">
+            <Helmet>
+                <title>Estate Details</title>
+            </Helmet>
             <div className="relative card bg-base-100 font-roboto shadow-sm border-2">
                 <figure><img className="w-full h-[300px] lg:h-[350px]" src={image} alt="Shoes" /></figure>
                 <div className="space-y-3 card-body">
@@ -18,7 +24,7 @@ const House = ({ house }) => {
                     </div>
                     <Link to={`/houseDetails/${id_}`}><button className="btn bg-gray-700 text-white">View Property</button></Link>
                 </div>
-               <div className="absolute flex justify-between top-4 left-5 right-5">
+                <div className="absolute flex justify-between top-4 left-5 right-5">
                     <div className="bg-gray-400 px-2 py-1 text-white">
                         {segment_name}
                     </div>

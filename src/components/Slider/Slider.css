@@ -6,24 +6,38 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 .swiper-button-prev{
-    background-color: red;
+    background-color: transparent;
+    padding: 25px;
+    border-radius: 9999px;
+    border: 2px solid white;
+    width: 1px;
+    height: 1px;
+    
 }
 
+.swiper-button-next:hover {
+    background-color: rgb(255 255 255);
+}
+    
+
+
 .slide1 {
-    background-image: url("../../assets/banner2.jpeg");
+    background-image: url("../../assets/ebanner2.jpeg");
+    
 }
 
 
 .slide2 {
-    background-image: url("../../assets/banner1.jpg");
+    background-image: url("../../assets/ebanner1.jpg");
 }
 
 .slide3 {
-    background-image: url("../../assets/banner5.jpg");
+    background-image: url("../../assets/ebanner5.jpg");
 }
 
 .slide4 {
-    background-image: url("../../assets/banner8.webp");
+    background-image: url("../../assets/ebanner8.jpg");
 }
