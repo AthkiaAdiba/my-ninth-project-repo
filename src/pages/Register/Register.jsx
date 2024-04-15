@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -47,12 +48,16 @@ const Register = () => {
             })
             .catch(error => {
                 console.error(error)
+
             })
     }
 
 
     return (
         <div className="mt-36 mb-20">
+            <Helmet>
+                <title>Registration</title>
+            </Helmet>
             <div className="w-full font-roboto mx-auto max-w-md p-8 space-y-3 rounded-none bg-gray-100 text-gray-100 shadow-2xl">
                 <h1 className="text-2xl font-bold text-center text-gray-900">Register</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -89,7 +94,7 @@ const Register = () => {
                                 message: 'Length must be at least 6 character'
                             }
                         })} />
-                        <span className={errors.password ? 'absolute bottom-10 right-5 text-gray-900 text-xl' : 'absolute bottom-4 right-5 text-gray-900 text-xl'} onClick={() => setShowPassword(!showPassword)}>
+                        <span className={errors.password ? 'absolute bottom-12 lg:bottom-12 right-5 text-gray-900 text-xl' : 'absolute bottom-4 right-5 text-gray-900 text-xl'} onClick={() => setShowPassword(!showPassword)}>
                             {
                                 showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
                             }

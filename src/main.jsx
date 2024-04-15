@@ -6,6 +6,10 @@ import router from './routes/Router.jsx'
 import AuthProvider from './Providers/AuthProvider.jsx'
 import { ToastContainer } from 'react-toastify';
 import { HelmetProvider } from 'react-helmet-async'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
+import 'animate.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

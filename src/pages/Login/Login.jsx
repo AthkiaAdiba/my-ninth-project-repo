@@ -5,6 +5,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const { login, loginWithGoogle, loginWithGithub } = useContext(AuthContext);
@@ -27,7 +28,6 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 console.log(result.user);
-                // setLoggedUser(user)
                 toast.success('You have logged in successfully');
                 reset();
 
@@ -36,6 +36,8 @@ const Login = () => {
             })
             .catch(error => {
                 console.error(error);
+                toast.error('Password or Email does not match.');
+                reset();
 
             })
     }
@@ -45,7 +47,6 @@ const Login = () => {
         loginWithGoogle()
             .then(result => {
                 console.log(result.user)
-                // setLoggedUser(user)
                 toast.success('You have logged in successfully');
 
             })
@@ -59,17 +60,20 @@ const Login = () => {
         loginWithGithub()
             .then(result => {
                 console.log(result.user)
-                // setLoggedUser(user)
                 toast.success('You have logged in successfully');
 
             })
             .catch(error => {
                 console.error(error)
+
             })
     }
 
     return (
         <div className="mt-36 mb-20">
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <div className="w-full font-roboto mx-auto max-w-md p-8 space-y-3 rounded-none bg-gray-100 text-gray-100 shadow-2xl">
                 <h1 className="text-2xl font-bold text-center text-gray-900">Login</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

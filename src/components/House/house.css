@@ -1,0 +1,12 @@
+.zoom-image-container {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.zoom-image-container img {
+    transition: transform 0.3s ease;
+}
+
+.animate__zoomIn {
+    animation-duration: 0.5s;
+}

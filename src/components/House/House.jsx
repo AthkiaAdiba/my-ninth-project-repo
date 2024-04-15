@@ -2,19 +2,23 @@ import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
+import  './house.css';
 
 
 
 const House = ({ house }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
     const { id_, image, estate_title, location, facilities, status, segment_name, price } = house;
     return (
-        <div className="flex">
+        <div data-aos="zoom-in" data-aos-duration="2000" className="flex">
             <Helmet>
                 <title>Estate Details</title>
             </Helmet>
-            <div className="relative card bg-base-100 font-roboto shadow-sm border-2">
-                <figure><img className="w-full h-[300px] lg:h-[350px]" src={image} alt="Shoes" /></figure>
-                <div className="space-y-3 card-body">
+            <div className="zoom-image-container relative card bg-base-100 font-roboto shadow-sm border-2">
+                <figure className=""><img className={`w-full h-[300px] lg:h-[350px] ${isHovered ? 'animate__animated animate__zoomIn' : ''}`} src={image}  alt="Shoes" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} /></figure>
+                <div className="space-y-1 card-body">
                     <h2 className="card-title text-gray-800">{estate_title}</h2>
                     <p className="flex gap-3 items-center text-lg text-gray-500"><FaLocationDot></FaLocationDot>{location}</p>
                     <div className="grid grid-cols-2 gap-x-24 gap-y-3 text-gray-500 text-base">
