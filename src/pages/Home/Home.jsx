@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Home</title>
+                <title>Home | DreamLoom Realty</title>
             </Helmet>
             <Slider></Slider>
             <Houses></Houses>

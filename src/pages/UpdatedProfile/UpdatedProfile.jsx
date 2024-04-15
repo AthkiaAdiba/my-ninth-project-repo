@@ -35,7 +35,7 @@ const UpdatedProfile = () => {
     return (
         <div>
             <Helmet>
-                <title>Updated Profile</title>
+                <title>Updated Profile | DreamLoom Realty</title>
             </Helmet>
             <div className="mt-36 mb-20">
                 <div className="w-full font-roboto mx-auto max-w-md p-8 space-y-3 rounded-none bg-gray-100 text-gray-100 shadow-2xl">

@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "image": "https://res.cloudinary.com/dv6fgvj2c/image/upload/v1713193369/hqtldq9pdlcihxscryyl.jpg",
+      "name": "Mauricio Umansky",
+      "position": "Sales Excutive",
+      "office_number": "+1234567890",
+      "mobile_number": "+1987654321",
+      "fax_number": "+1122334455",
+      "email": "john.doe@gmail.com"
+    },
+    {
+      "id": 2,
+      "image": "https://res.cloudinary.com/dv6fgvj2c/image/upload/v1713193634/gwlquc6cuijcxdkeqvax.jpg",
+      "name": "Fredrik Eklund",
+      "position": "Real estate broker",
+      "office_number": "+9876543210",
+      "mobile_number": "+1234567890",
+      "fax_number": "+5544332211",
+      "email": "jane.smith@gmail.com"
+    },
+    {
+      "id": 3,
+      "image": "https://res.cloudinary.com/dv6fgvj2c/image/upload/v1713193794/n7bcohwhw8k1g4kh32qo.jpg",
+      "name": "Jason Oppenheim",
+      "position": "Sales Excutive",
+      "office_number": "+5556667777",
+      "mobile_number": "+3334445555",
+      "fax_number": "+7778889999",
+      "email": "michael.johnson@gmail.com"
+    },
+    {
+      "id": 4,
+      "image": "https://res.cloudinary.com/dv6fgvj2c/image/upload/v1713193921/vedudk6wrxqtxsvoxhrh.jpg",
+      "name": "Josh Altman",
+      "position": "Real estate broker",
+      "office_number": "+1112223333",
+      "mobile_number": "+7778889999",
+      "fax_number": "+3334445555",
+      "email": "emily.davis@gmail.com"
+    },
+    {
+      "id": 5,
+      "image": "https://res.cloudinary.com/dv6fgvj2c/image/upload/v1713194099/gc1esijqrw4qbsovikbn.jpg",
+      "name": "Cathy Franklin",
+      "position": "Real estate broker",
+      "office_number": "+6667778888",
+      "mobile_number": "+4445556666",
+      "fax_number": "+9990001111",
+      "email": "david.wilson@gmail.com"
+    },
+    {
+      "id": 6,
+      "image": "https://res.cloudinary.com/dv6fgvj2c/image/upload/v1713194243/mo6bjragmcplr0p0ioum.webp",
+      "name": "Ryan Serhant",
+      "position": "Sales Excutive",
+      "office_number": "+2223334444",
+      "mobile_number": "+5556667777",
+      "fax_number": "+0001112222",
+      "email": "sarah.brown@gmail.com"
+    }
+  ]
+  

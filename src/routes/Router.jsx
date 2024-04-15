@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../layout/Root";
 import Home from "../pages/Home/Home";
-import Profile from "../pages/Profile/Profile";
 import HouseDetails from "../components/HouseDetails/HouseDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import UpdatedProfile from "../pages/UpdatedProfile/UpdatedProfile";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Agents from "../pages/Agents/Agents";
 
 const router = createBrowserRouter([
     {
@@ -18,10 +18,6 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
-            },
-            {
-                path: '/profile',
-                element: <Profile></Profile>
             },
             {
                 path: '/houseDetails/:id',
@@ -39,7 +35,12 @@ const router = createBrowserRouter([
             {
                 path: '/updatedProfile',
                 element: <PrivateRoute><UpdatedProfile></UpdatedProfile></PrivateRoute>
+            },
+            {
+                path: '/agents',
+                element: <Agents></Agents>
             }
+            
         ]
     }
 ]);

@@ -9,11 +9,10 @@ const Navbar = () => {
 
     const navLinks = <>
         <NavLink className={({ isActive }) => isActive ? 'underline mr-4' : 'mr-4'} to='/'>Home</NavLink>
-        <NavLink className={({ isActive }) => isActive ? 'underline mr-4' : 'mr-4'} to='/profile'>Profile</NavLink>
-        <NavLink className={({ isActive }) => isActive ? 'underline mr-4' : 'mr-4'} to='/anything'>Anything</NavLink>
         {
             user && <>
                 <NavLink className={({ isActive }) => isActive ? 'underline mr-4' : 'mr-4'} to='/updatedProfile'>Updated Profile</NavLink>
+                <NavLink className={({ isActive }) => isActive ? 'underline mr-4' : 'mr-4'} to='/agents'>Agents</NavLink>
             </>
         }
 

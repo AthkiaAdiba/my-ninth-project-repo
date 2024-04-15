@@ -56,7 +56,7 @@ const Register = () => {
     return (
         <div className="mt-36 mb-20">
             <Helmet>
-                <title>Registration</title>
+                <title>Register | DreamLoom Realty</title>
             </Helmet>
             <div className="w-full font-roboto mx-auto max-w-md p-8 space-y-3 rounded-none bg-gray-100 text-gray-100 shadow-2xl">
                 <h1 className="text-2xl font-bold text-center text-gray-900">Register</h1>

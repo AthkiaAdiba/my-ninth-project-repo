@@ -48,6 +48,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 toast.success('You have logged in successfully');
+                navigate(location?.state ? location.state : '/')
 
             })
             .catch(error => {
@@ -61,6 +62,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 toast.success('You have logged in successfully');
+                navigate(location?.state ? location.state : '/')
 
             })
             .catch(error => {
@@ -72,7 +74,7 @@ const Login = () => {
     return (
         <div className="mt-36 mb-20">
             <Helmet>
-                <title>Login</title>
+                <title>Login | DreamLoom Realty</title>
             </Helmet>
             <div className="w-full font-roboto mx-auto max-w-md p-8 space-y-3 rounded-none bg-gray-100 text-gray-100 shadow-2xl">
                 <h1 className="text-2xl font-bold text-center text-gray-900">Login</h1>
