@@ -2,7 +2,7 @@
 
 #### Live Site:
 
-   - [DreamLoom Realty](https://byte-blaze.netlify.app/)
+   - [DreamLoom Realty](https://my-ninth-project-repo.web.app/)
 
 #### Resources:
 
@@ -25,5 +25,6 @@
 #### 2. They can move from one page to another page by using react routing system.
 #### 3. When they clicked on the View Property button, they can see estate details of the clicked estate.
 #### 4. This website's design simple and professional.
-#### 5. They can create their ID and after they can see their profile picture and name on the navbar.
+#### 5. They can create their ID and after creating they can see their profile picture and name on the navbar.
 #### 6. Users also update their profile picture and name.
+#### 7. They can secure their information.
