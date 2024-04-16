@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 
 
 const UpdatedProfile = () => {
-    const { user, updateInformation } = useContext(AuthContext);
+    const { user, updateInformation, setUser } = useContext(AuthContext);
     // console.log(loggedUser.displayName)
 
     const {
@@ -28,6 +28,7 @@ const UpdatedProfile = () => {
         updateInformation(user, name, image)
             .then(() => {
                 console.log('profile updated')
+                setUser({...user, displayName: name, photoURL: image})
             })
             .catch()
     }

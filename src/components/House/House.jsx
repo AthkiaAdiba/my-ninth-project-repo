@@ -13,9 +13,7 @@ const House = ({ house }) => {
     const { id_, image, estate_title, location, facilities, status, segment_name, price } = house;
     return (
         <div data-aos="zoom-in" data-aos-duration="2000" className="flex">
-            <Helmet>
-                <title>Estate Details</title>
-            </Helmet>
+            
             <div className="zoom-image-container relative card bg-base-100 font-roboto shadow-sm border-2">
                 <figure className=""><img className={`w-full h-[300px] lg:h-[350px] ${isHovered ? 'animate__animated animate__zoomIn' : ''}`} src={image}  alt="Shoes" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} /></figure>
                 <div className="space-y-1 card-body">

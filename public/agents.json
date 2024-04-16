@@ -7,7 +7,7 @@
       "office_number": "+1234567890",
       "mobile_number": "+1987654321",
       "fax_number": "+1122334455",
-      "email": "john.doe@gmail.com"
+      "email": "doem@gmail.com"
     },
     {
       "id": 2,
@@ -17,7 +17,7 @@
       "office_number": "+9876543210",
       "mobile_number": "+1234567890",
       "fax_number": "+5544332211",
-      "email": "jane.smith@gmail.com"
+      "email": "smith@gmail.com"
     },
     {
       "id": 3,
@@ -27,7 +27,7 @@
       "office_number": "+5556667777",
       "mobile_number": "+3334445555",
       "fax_number": "+7778889999",
-      "email": "michael.johnson@gmail.com"
+      "email": "johnson@gmail.com"
     },
     {
       "id": 4,
@@ -37,7 +37,7 @@
       "office_number": "+1112223333",
       "mobile_number": "+7778889999",
       "fax_number": "+3334445555",
-      "email": "emily.davis@gmail.com"
+      "email": "davis@gmail.com"
     },
     {
       "id": 5,
@@ -47,7 +47,7 @@
       "office_number": "+6667778888",
       "mobile_number": "+4445556666",
       "fax_number": "+9990001111",
-      "email": "david.wilson@gmail.com"
+      "email": "wilson@gmail.com"
     },
     {
       "id": 6,
@@ -57,7 +57,7 @@
       "office_number": "+2223334444",
       "mobile_number": "+5556667777",
       "fax_number": "+0001112222",
-      "email": "sarah.brown@gmail.com"
+      "email": "brown@gmail.com"
     }
   ]
   

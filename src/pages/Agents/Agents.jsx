@@ -18,7 +18,7 @@ const Agents = () => {
                 <title>Agents | DreamLoom Realty</title>
             </Helmet>
             <h2 data-aos="fade-down" data-aos-duration="2000" className="font-roboto text-7xl text-center mb-10">Agents</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-2 lg:mx-28">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-2 lg:mx-[5%]">
                 {
                     agents.map(agent => <Agent key={agent.id} agent={agent}></Agent>)
                 }

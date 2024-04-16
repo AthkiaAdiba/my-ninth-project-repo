@@ -43,7 +43,6 @@ const AuthProvider = ({ children }) => {
 
     // Update profile
     const updateInformation = (userInformation, name, image) => {
-        // setLoading(true)
         return updateProfile(userInformation, {
             displayName: name,
             photoURL: image
@@ -78,7 +77,8 @@ const AuthProvider = ({ children }) => {
         updateInformation,
         logOut,
         loginWithGoogle,
-        loginWithGithub 
+        loginWithGithub ,
+        setUser
     }
 
     return (

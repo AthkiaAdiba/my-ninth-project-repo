@@ -94,7 +94,7 @@ const Register = () => {
                                 message: 'Length must be at least 6 character'
                             }
                         })} />
-                        <span className={errors.password ? 'absolute bottom-12 lg:bottom-12 right-5 text-gray-900 text-xl' : 'absolute bottom-4 right-5 text-gray-900 text-xl'} onClick={() => setShowPassword(!showPassword)}>
+                        <span className='absolute top-12 right-5 text-gray-900 text-xl' onClick={() => setShowPassword(!showPassword)}>
                             {
                                 showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
                             }

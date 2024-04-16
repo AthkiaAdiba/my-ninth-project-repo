@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { FaLocationDot } from "react-icons/fa6";
 import { useLoaderData, useParams } from "react-router-dom";
 
@@ -11,6 +12,9 @@ const HouseDetails = () => {
     console.log(house)
     return (
         <div className="mt-20 lg:mt-36 mx-2 lg:mx-72 mb-16">
+            <Helmet>
+                <title>Estate Details | DreamLoom Realty</title>
+            </Helmet>
             <div className="space-y-3 lg:space-y-0 mb-2 lg:mb-5 p-2 md:p-5 lg:p-6 flex flex-col lg:flex-row justify-between gap-0 lg:gap-6 font-roboto">
                 <div className="space-y-4">
                     <div className="flex gap-3 lg:gap-5 items-center">
