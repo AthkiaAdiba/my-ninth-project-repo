@@ -8,21 +8,6 @@
     background-size: cover;
     
 }
-.swiper-button-prev{
-    background-color: transparent;
-    padding: 25px;
-    border-radius: 9999px;
-    border: 2px solid white;
-    width: 1px !important;
-    height: 1px;
-    
-}
-
-.swiper-button-next:hover {
-    background-color: rgb(255 255 255);
-}
-    
-
 
 .slide1 {
     background-image: url("../../assets/ebanner2.jpeg");

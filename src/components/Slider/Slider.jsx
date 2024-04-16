@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Slider = () => {
     return (
-        <div className='mb-10 mt-16 lg:mt-20'>
+        <div className='mb-10 mt-16 lg:mt-24'>
             <Swiper
                 navigation={true}
                 modules={[Navigation, Autoplay, EffectFade]}

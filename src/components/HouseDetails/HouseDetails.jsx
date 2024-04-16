@@ -11,7 +11,7 @@ const HouseDetails = () => {
     const { image, estate_title, location, facilities, status, segment_name, price, description, area } = house;
     console.log(house)
     return (
-        <div className="mt-20 lg:mt-36 mx-2 lg:mx-72 mb-16">
+        <div className="mt-20 lg:mt-36 mx-2 lg:mx-[18%] mb-16">
             <Helmet>
                 <title>Estate Details | DreamLoom Realty</title>
             </Helmet>
@@ -36,7 +36,7 @@ const HouseDetails = () => {
             </div>
             <div className="p-4 lg:p-8 card bg-base-100 rounded-none shadow-xl mx-auto font-roboto">
                 <p className="text-4xl font-bold mb-7 text-gray-900 underline">Gallery</p>
-                <figure><img className="w-full h-[350px] lg:h-[500px]" src={image} alt="Shoes" /></figure>
+                <figure><img className="w-full h-[330px] lg:h-[500px]" src={image} alt="Shoes" /></figure>
             </div>
             <div className="mt-10 p-4 lg:p-8 card bg-base-100 rounded-none shadow-xl mx-auto font-roboto">
                 <p className="text-4xl font-bold mb-7 text-gray-900 underline">Description</p>
