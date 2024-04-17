@@ -41,7 +41,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <div className="hidden lg:block">
+                    <div className="hidden md:block lg:block">
                         <div className="flex items-center">
                             <IoIosHome className="text-3xl lg:text-4xl"></IoIosHome>
                             <p><a className="btn btn-ghost text-lg font-pt_sans lg:text-4xl">DreamLoom Realty</a></p>
@@ -56,9 +56,9 @@ const Navbar = () => {
                 {
                     user ?
                         <div className="navbar-end flex gap-0 lg:gap-3 items-center">
-                            <details className="dropdown mr-[140%] lg:mr-0">
+                            <details className="dropdown mr-[140%] md:mr-[45%] lg:mr-0">
                                 <summary className="btn w-10 lg:w-12 h-10 lg:h-12 rounded-full">
-                                    <div className="avatar tooltip tooltip-right lg:tooltip-left" data-tip={user.displayName}>
+                                    <div className="avatar tooltip tooltip-right md:tooltip-left lg:tooltip-left" data-tip={user.displayName}>
                                         <div className="w-12 lg:w-12 h-12 lg:h-12 rounded-full">
                                             <img src={user.photoURL} />
                                         </div>
@@ -97,7 +97,7 @@ const Navbar = () => {
                                     </div>
                                 </ul>
                             </details>
-                            <div className="block lg:hidden -ml-40">
+                            <div className="block md:hidden lg:hidden -ml-40">
                                 <div className="flex items-center">
                                     <IoIosHome className="text-3xl lg:text-4xl"></IoIosHome>
                                     <p><a className="btn btn-ghost text-lg font-pt_sans lg:text-4xl">DreamLoom Realty</a></p>
@@ -111,7 +111,7 @@ const Navbar = () => {
                             <Link onClick={handleLogOut} className="hidden lg:block btn w-14 lg:w-28 bg-gray-900 text-white border-none font-roboto text-base lg:text-xl text-center">Log out</Link>
                         </div> :
                         <div className="navbar-end flex gap-2 lg:gap-4">
-                            <div className="block lg:hidden">
+                            <div className="block md:hidden lg:hidden">
                                 <div className="flex items-center">
                                     <IoIosHome className="text-3xl lg:text-4xl"></IoIosHome>
                                     <p><a className="btn btn-ghost text-lg font-pt_sans lg:text-4xl">DreamLoom Realty</a></p>
