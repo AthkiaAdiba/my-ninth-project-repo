@@ -81,7 +81,8 @@ const Login = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                     <div className="space-y-1 text-lg">
                         <label className="block text-gray-900 font-medium text-xl">Email Address</label>
-                        <input type="email" name="email" placeholder="Enter Your Email" className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-100 text-black focus:border-violet-400" {...register("email")} />
+                        <input type="email" name="email" placeholder="Enter Your Email" className="w-full px-4 py-3 rounded-md border border-gray-700 bg-gray-100 text-black focus:border-violet-400" {...register("email", { required: true })} />
+                        {errors.password && <span className="text-red-700">This field is required</span>}
                     </div>
 
                     <div className="space-y-1 text-lg">

@@ -11,8 +11,9 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loggedUser, setLoggedUser] = useState(null);
-    const [loading, setLoading] = useState(true)
-    
+    const [loading, setLoading] = useState(true);
+
+
     // providers
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -46,7 +47,7 @@ const AuthProvider = ({ children }) => {
         return updateProfile(userInformation, {
             displayName: name,
             photoURL: image
-        }) 
+        })
     }
 
     // Log out
@@ -68,8 +69,9 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
-    const authInfo = { createUser, 
-        user, 
+    const authInfo = {
+        createUser,
+        user,
         login,
         loggedUser,
         loading,
@@ -77,8 +79,8 @@ const AuthProvider = ({ children }) => {
         updateInformation,
         logOut,
         loginWithGoogle,
-        loginWithGithub ,
-        setUser
+        loginWithGithub,
+        setUser,
     }
 
     return (
