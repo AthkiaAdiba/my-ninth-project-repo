@@ -4,10 +4,10 @@ import { IoIosHome } from "react-icons/io";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-gray-900 text-white">
+            <footer className="footer font-roboto p-10 bg-gray-900 text-white">
                 <aside>
                     <IoIosHome className="text-3xl lg:text-4xl"></IoIosHome>
-                    <p>DreamLoom Realty Industries Ltd.<br />Providing reliable tech since 1992</p>
+                    <p><span className="text-2xl">DreamLoom Realty</span> Industries Ltd.<br />Providing reliable tech since 1992</p>
                 </aside>
                 <nav>
                     <h6 className="footer-title">Services</h6>
